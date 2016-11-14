@@ -39,7 +39,8 @@ setupBackendDependencies() {
   LOG "echo $PYTHONPATH"
   echo "Running python"
   python -c "import cryptography as c; print c.__version__; import globaleaks as g; print g.__version__"
-  LOG "pip freeze"
+  echo "Running failed line"
+  python -c "from globaleaks import DATABASE_VERSION; print DATABASE_VERSION"
   set -e
 }
 

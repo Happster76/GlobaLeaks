@@ -8,6 +8,7 @@ import pip
 import platform
 import sys 
 
+print('before reload:', sys.path)
 # Use UTF-8 for all string <-> unicode conversions in the program
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -95,6 +96,7 @@ if (platform.system() == 'Linux' and platform.linux_distribution()[2] in
 from twisted.python import usage
 from twisted.scripts._twistd_unix import ServerOptions
 
+print('after reload:', sys.path)
 from globaleaks import DATABASE_VERSION
 from globaleaks.db import perform_system_update
 from globaleaks.runner import GlobaLeaksRunner
